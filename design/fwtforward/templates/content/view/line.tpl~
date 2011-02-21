@@ -1,1 +1,0 @@
-{if $object.url_alias}<a href={$node_url|ezurl}>{/if}{$object.name|wash}{if $node_url}</a>{/if}
