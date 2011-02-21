@@ -1,0 +1,3 @@
+{if is_set($class)|not}
+    {def $class = 'unknown'}
+{/if}

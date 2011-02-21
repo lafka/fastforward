@@ -1,0 +1,11 @@
+<?php /* #?ini charset="utf-8"?
+[authorized_error]
+Source=error/aside/default.tpl
+MatchFile=error/aside/authorized.tpl
+Subdir=templates
+
+[full_image]
+Source=node/view/full.tpl
+MathFile=full/image.tpl
+Subdir=templates
+Match[class_identifier]=image
