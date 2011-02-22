@@ -1,5 +1,7 @@
-ul.menu { padding: 0;margin:0; list-style: none; clear: both;}
-ul.menu.horizontal { float: left; }
-ul.menu.horizontal.right { float: right; }
-ul.menu.horizontal:last, ul.menu.horizontal .last { clear: both; }
-ul.fifty-fifty li { width: 50%;}
+nav, nav.ul { padding: 0;margin:0; list-style: none; clear: both;}
+nav.horizontal li { float: left; list-style:none; }
+nav.horizontal.right li { float: right; }
+nav.horizontal li:last, ul.menu.horizontal li.last { clear: both; }
+
+nav li a {text-decoration: none; padding: 0.3em 1em; }
+nav li.current a {font-weight: bold}

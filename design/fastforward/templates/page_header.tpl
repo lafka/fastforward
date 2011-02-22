@@ -3,7 +3,7 @@
             <h1 class="title">{ezini('SiteSettings','SiteName')|wash}</h1>
             <h3 class="slogan">@todo site-slogan</h3>
         </div>
-        <nav>
+        <nav class="horizontal">
             {def $nav = fetch('content', 'list', hash(
                 'parent_node_id', ezini('NodeSettings', 'RootNode', 'content.ini'),
                 'sort_by', array( 'priority', false() ),
