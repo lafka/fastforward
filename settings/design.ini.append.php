@@ -18,6 +18,7 @@ CSSFileList[]=src/forms.css
 CSSFileList[]=src/grid.css
 CSSFileList[]=plugins/silk-icons/sprite.css
 CSSFileList[]=menu.css
+CSSFileList[]=websitetoolbar.css
 FrontendCSSFileList[]
 FrontendCSSFileList[]=screen.css
 
