@@ -29,7 +29,6 @@ AsidePosition=after
 ContentHasColborder=enabled
 ClassAside[]
 ClassAside[default]=parts/navigation/children.tpl
-ClassAside[folder]=parts/navigation/series.tpl
 ClassAside[error]=error/aside/default.tpl
 
 [RowSettings]
