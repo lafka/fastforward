@@ -1,0 +1,121 @@
+/**
+ * A general purpose HTML5 design framework for eZ Publish
+ *
+ * Stylesheet for making HTML5 compatible elements
+ *
+ * Copyright (c) 2010, Olav Frengstad and contributors.
+ * All rights reserved
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are
+ * permitted provided that the following conditions are met:
+ *
+ *	* Redistributions of source code must retain the above copyright notice, this list of
+ *	conditions and the following disclaimer.
+ *
+ * 	* Redistributions in binary form must reproduce the above copyright notice, this list
+ * 	of conditions and the following disclaimer in the documentation and/or other materials
+ * 	provided with the distribution.
+ *
+ *	* Neither the name of the FWT Team nor the names of its contributors may be used
+ *	to endorse or promote products derived from this software without specific prior
+ * 	written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
+ * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS
+ * AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Sets basic definition and autoloads system
+ *
+ * @package     fwtforward
+ * @version     0.1
+ * @copyright   2010 Olav Frengstad
+ * @author      Olav Frengstad
+ * @license     http://www.opensource.org/licenses/bsd-license.php BSD License
+ */
+header, nav, footer, section, article { display: block; }
+figure, aside, dialog { display: inline-block; }
+value, min, low, high, max, optimum, meter { display: inline;}
+video,canvas,audio { }
+details, datagrid, menu, command, menu { }
+
+/**
+ * Metadata elements
+ * Sets behaviour for the rest of the content
+ */
+base, command, link, meta, noscript, script, style, title { display: none; }
+
+/**
+ * Flow content
+ *
+ * Most content elements are applicable to this type, they should all be in body
+ * of the document
+ */
+a, em, strong, small, s, cite, q, dfn, abr, time, code, var, samp, kbd, sub, sup, 
+i, b, mark, ruby, span, br, wbr, area, article, aside, audio, bdi, bdo, canvas, 
+command, datalist, del, details, dfn, div, dl, embed, fieldset, figure, footer, 
+form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, iframe, img, input, ins, keygen, 
+label, map, mark, math, menu, meter, nav, noscript, object, ol, output, p, pre, 
+progress, script, section, select, style, svg, table, textarea, time, ul, video, 
+text { display: inherit; }
+
+/**
+ * Sectioning content
+ *
+ * Defines scopes of heading and footers
+ */
+article, aside, nav, section { display: block; }
+
+/**
+ * Heading content
+ *
+ * Defines header of a content
+ */
+h1, h2, h3, h4, h5, h6, hgroup { display: inline-block; }
+
+/**
+ * Phrasing content
+ *
+ * Intra-paragraph text elements
+ * @note del, ins, a and map elements is only valid phrasing content if it contains a phrasing element
+ * @note area is only valid if descendant of a <map> element
+ */
+a, abbr, area, audio, b, bdi, bdo, br, button, canvas, cite, code, command, 
+datalist, del, dfn, em, embed, i, iframe, img, input, ins, kbd, keygen, label, 
+map, mark, math, meter, noscript, object, output, progress, q, ruby, s, samp, 
+script, select, small, span, strong, sub, sup, svg, textarea, time, var, video, 
+wbr, { display: inline; }
+
+
+/**
+ * Embedded content
+ *
+ * Content that imports another resource into the document
+ */
+audio, canvas, embed, iframe, img, math, object, svg, video { display: inline-block; }
+
+/**
+ * Interactive content
+ *
+ * Content specified for user interaction
+ * @note audio is only valid if controll attributes is present
+ * @note img is only interactive if usemap attribute is present
+ * @note input considerede interactive only if type attribute != hidden
+ * @note menu is only interactive if type attribute == toolbar
+ * @note object is considerede interative if usemap attribute is set
+ * @note video is interactive if controll attributes is present
+ */
+a, audio, button, details, embed, iframe, img, input, keygen, label, menu, 
+object, select, textarea, video { }
+
+/**
+ * Transport content model
+ *
+ * Some elements are described as transparent; this is when its subjected to its
+ * parent content model
+ */
