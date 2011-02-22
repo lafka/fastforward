@@ -15,14 +15,16 @@
             <ul>
             {foreach $nav as $i => $item}
                 <li{if $i|eq(0)} class="first"{elseif $item.node_id|eq( $module_result.node_id)} class="current"{/if}>
-                    <a href={$item.url_alias|ezurl}>{$item.name|wash}</a>
-                {if $item.children_count|gt(0)}
-                    <ul class="child">
-                        {foreach $item.children as $child}
-                            <li><a href={$child.url_alias|ezurl}>{$child.name|wash}</a></li>
-                        {/foreach}
-                    </ul>
-                {/if}
+						<a href={$item.url_alias|ezurl}>{cond(	$item.data_map.short_name.content, $item.data_map.short_name.content, 
+																$item.name, $item.name)|wash()}</a>
+					{if $item.children_count|gt(0)}
+						<ul class="child">
+							{foreach $item.children as $child}
+								<li><a href={$child.url_alias|ezurl}>{cond( $child.data_map.short_name.content, $child.data_map.short_name.content, 
+																			$child.name, $child.name)|wash()}</a></li>
+							{/foreach}
+						</ul>
+					{/if}
                 </li>
             {/foreach}
             {/if}
