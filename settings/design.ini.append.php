@@ -2,7 +2,7 @@
 # eZ publish configuration file for modules
 
 [ExtensionSettings]
-DesignExtensions[]=fwtforward
+DesignExtensions[]=fastforward
 
 # List of javascripts to use in footer
 [JavaScriptSettings]
