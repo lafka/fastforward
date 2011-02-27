@@ -1,4 +1,4 @@
-{if and(is_set($class)|not,is_set($module_result.content_info))}{def $class = $module_result.content_info.class_identifier}{elseif is_set($class)|not}{def $class='unknown'}{if $module_result.ui_component|eq('error')}{set $class='error'}{/if}{/if}<!DOCTYPE html>
+{if and(is_set($class)|not,is_set($module_result.content_info))}{def $class = $module_result.content_info.class_identifier}{elseif is_set($class)|not}{def $class='unknown'}{if $module_result.ui_component|eq('error')}{set $class='error'}{/if}{/if}{if $module_result.node_id|eq(ezini('NodeSettings', 'RootNode', 'content.ini'))}{set $class='frontpage'}{/if}<!DOCTYPE html>
 {def $pagedata         = ezpagedata()
      $locales          = fetch( 'content', 'translation_list' )
      $pagedesign       = $pagedata.template_look
