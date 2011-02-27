@@ -4,7 +4,7 @@ nav.horizontal.right li { float: right; }
 nav.horizontal li:last, ul.menu.horizontal li.last { clear: both; }
 
 nav li a {text-decoration: none; padding: 0.6em 1em; }
-nav li.current > a {font-weight: bold}
+nav li.active a, nav li.current > a {font-weight: bold}
 
 /**
  * Css drop down for horizontal menu
