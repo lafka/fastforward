@@ -1,0 +1,1 @@
+<a href={$object.url_alias|ezurl}>{$object.name|wash}</a>

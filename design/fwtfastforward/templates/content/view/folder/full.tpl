@@ -1,10 +1,10 @@
 <article id="node-{$node.main_node_id}" class="content-view full {$node.object.class_identifier}">
     <hgroup>
-        <h1>{$node.name|wash()}</h1>
+        {attribute_view_gui attribute=$node.object.data_map.name view=title size=1}
     </hgroup>
     
     {if and( is_set($node.data_map.image),$node.data_map.image.has_content)}
-        {content_view_gui content_object = $node.data_map.image.content view=full}
+        {attribute_view_gui attribute=$node.data_map.image view=preview}
     {/if}
     
 {def $name_pattern = $node.object.content_class.contentobject_name|explode('>')|implode(',') $name_pattern_array = array('enable_comments', 'enable_tipafriend', 'show_children', 'show_children_exclude', 'show_children_pr_page')}
@@ -19,4 +19,10 @@
             {attribute_view_gui attribute=$attribute}
         {/if}
     {/foreach}
+
+    {if and($node.is_container, count($node.children)|gt(0))}
+        {foreach $node.children as $child}
+            {content_view_gui content_object=$child view='folder/embed'}
+        {/foreach}
+    {/if}
 </article>

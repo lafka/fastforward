@@ -17,6 +17,11 @@
 </context>
 <context>
 	<name>index.php</name>
+
+    <message>
+		<source>Some general warnings occured, see debug for more information.</source>
+		<translation>Det ble generert en eller flere advarsler, se i feilsøkings informasjonen.</translation>
+	</message>
 	<message>
 		<source>Some errors occurred, see debug for more information.</source>
 		<translation>Det skjedde en eller flere feil, se i feilsøkings informasjonen.</translation>
@@ -35,5 +40,12 @@
 		<source>Frontpage</source>
 		<translation>Hjem</translation>
 	</message>
+</context>
+<context>
+    <name>design/standard/user</name>
+    <message>
+        <source>Logout</source>
+        <translation>Logg ut</translation>
+    </message>
 </context>
 </TS>

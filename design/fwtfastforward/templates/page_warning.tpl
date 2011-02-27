@@ -1,5 +1,4 @@
 {if and( is_set($warning_list), count($warning_list)|gt(0) )}
-{$warning_list}
 <div class="message">
     {foreach $warning_list as $warning}
     <h3>

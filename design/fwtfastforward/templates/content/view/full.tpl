@@ -1,0 +1,3 @@
+<section class="image">
+    
+</section>

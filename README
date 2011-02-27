@@ -1,0 +1,69 @@
+
+                FWT Fast Forward - eZ Publish Template Framework
+================================================================================
+Fast Forward is aimed to be a replacement to the now outdated eZ Webin extension.
+By working with conventions over configuration we can avoid using uneccasery
+tempalte overrides pr. content class and instead follow an already defined file-
+structure; it has never been quicker to create custom templates in eZ Publish.
+
+FastForward is developed and maintained by Frengstad Web Teknologi (http://fwt.no)
+
+==  Dependencies
+
+FastForward uses the blueprint css framework (www.blueprintcss.org) and famfamfam
+silk icon set.
+
+==  Getting FWT Fast Forward sources from GIT
+
+    This methods requires a working linux system with git package installed.
+
+    To install fastforward open up a new terminal window, then navigate to the
+    eZ Publish extension directory.
+
+    $ git clone http://github.com/lafka/fwtfastforward.git
+
+==  Enabling the extension in eZ Publish admin interface
+
+    You can enable the extension by logging into your admin siteaccess:
+
+    * Go to the "Setup" tab
+    * Fint the "INI-settings" link in left column and click it
+    * In the first drop down select "site.ini"
+    * In the second select the siteaccess you want to enable the extension for
+    * Scrolldown to "ExtensionSettings" and click the edit icon located to the
+      right of the "ActiveExtensions" line.
+    * Add a new line saying "=fwtfastforward"
+
+==  Creating a basic extension of FastForward
+
+    We will use the name "t-ext" for our extension, you would want to switch this
+    to something related to your project.
+
+
+    Create the folder structure:
+
+    * Create the folder "t-ext" under eZ Publish extension dir
+    * Create the folder "settings" under "t-ext"
+    * Create the folder "design" under "t-ext"
+    * Create the folder "t-ext" under "design" 
+    ( Alternative run this command from  you eZ Publish root: $ mkdir -p extensions/t-ext/design/t-ext/templates/ extensions/t-ext/design/t-ext/stylesheet extensions/t-ext/settings/ )
+
+
+    Add the settings needed:
+    * Create the file "design.ini.append.php" under "t-ext/settings"
+    * If the block "ExtensionSettings" don't extist create it.
+    * Add "DesignExtensions[]=t-ext" line under the ExtensionSettings"
+    
+    You can now start creating you site
+
+==  Creating a custom template for content class: folder
+
+    In your new extension create the following directories:
+
+    design/t-ext/templates/
+    design/t-ext/templates/content
+    design/t-ext/templates/content/view/
+    design/t-ext/templates/content/view/folder/
+    
+    Now if we want to create our new template for the full view of folders you just
+    add a the full.tpl in here: design/t-ext/templates/content/view/folder/

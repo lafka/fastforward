@@ -1,0 +1,14 @@
+nav, nav.ul { padding: 0;margin:0; list-style: none;}
+nav.horizontal li { float: left; list-style:none; }
+nav.horizontal.right li { float: right; }
+nav.horizontal li:last, ul.menu.horizontal li.last { clear: both; }
+
+nav li a {text-decoration: none; padding: 0.6em 1em; }
+nav li.current > a {font-weight: bold}
+
+/**
+ * Css drop down for horizontal menu
+ */
+ nav.horizontal li ul.child {display: none; background: #fff;}
+ nav.horizontal li:hover ul.child{ display: block;position:absolute;background: #F7F7F7; border-bottom: 1px solid #ddd; clear: both;z-index:1000; width: 15em;}
+ nav.horizontal li li {clear: both;}
