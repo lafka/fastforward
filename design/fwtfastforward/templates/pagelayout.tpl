@@ -20,7 +20,8 @@
         {def    $contentclass  = "span-24 lat"
                 $aside         = ezini('ColumnSettings', 'ClassAside', 'design.ini')
                 $asidesource   = false()
-                $content       = false()}
+                $content       = false()
+                $positions      = ezini('ColumnSettings', 'AsidePosition',  'design.ini')}
         
         {if is_set($aside.$class)}
             {set $asidesource = "design:page_aside.tpl"}
@@ -32,8 +33,9 @@
             {set $contentclass  = "span-15"}
         {/if}        
         
+        {if is_set($positions[$class])|not}{set $class = 'default'}{/if}
         {if and(    is_string( $asidesource ),
-                    ezini('ColumnSettings', 'AsidePosition',  'design.ini')|eq('before') )}
+                    $positions[$class]|eq('before') )}
             {ezini('ColumnSettings', 'AsidePosition',  'design.ini')}
             {cache-block keys=$asidesource}
             {include uri=$asidesource content=$content}
@@ -53,7 +55,7 @@
         </section>
         
         {if and(    is_string( $asidesource ),
-                    ezini('ColumnSettings', 'AsidePosition',  'design.ini')|eq('after') )}
+                    $positions[$class]|eq('after') )}
             {cache-block keys=$asidesource}
             {include uri=$asidesource content=$content class="last"}
             {/cache-block}

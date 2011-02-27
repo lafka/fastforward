@@ -24,7 +24,9 @@ FrontendCSSFileList[]=screen.css
 # Enabling DefaultAside will result in ALWAYS showing a sidebar,
 # if no sidebar is defined it will display ClassAside[default]
 DefaultAside=disabled
-AsidePosition=after
+AsidePosition[]
+AsidePosition[default]=after
+AsidePosition[folder]=before
 ContentHasColborder=enabled
 ClassAside[]
 ClassAside[default]=parts/navigation/children.tpl
