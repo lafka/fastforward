@@ -1,4 +1,4 @@
-{if and(is_set($class)|not,is_set($module_result.content_info))}{def $class = $module_result.content_info.class_identifier}{elseif is_set($class)|not}{def $class='unknown'}{if $module_result.ui_component|eq('error')}{set $class='error'}{/if}{/if}{if $module_result.node_id|eq(ezini('NodeSettings', 'RootNode', 'content.ini'))}{set $class='frontpage'}{/if}<!DOCTYPE html>
+{if and(is_set($pageclass)|not,is_set($module_result.content_info))}{def $pageclass = $module_result.content_info.class_identifier}{elseif is_set($pageclass)|not}{def $pageclass='unknown'}{if $module_result.ui_component|eq('error')}{set $pageclass='error'}{/if}{/if}{if $module_result.node_id|eq(ezini('NodeSettings', 'RootNode', 'content.ini'))}{set $pageclass='frontpage'}{/if}<!DOCTYPE html>
 {def $pagedata         = ezpagedata()
      $locales          = fetch( 'content', 'translation_list' )
      $pagedesign       = $pagedata.template_look
@@ -10,7 +10,7 @@
 {include uri="design:page_head_displayscripts.tpl"}
 
 </head>
-<body class="{$class}">
+<body class="{$pageclass}">
 <div id="wrapper">
     <div id="main" class="container">
         {cache-block}
@@ -23,9 +23,9 @@
                 $content       = false()
                 $positions      = ezini('ColumnSettings', 'AsidePosition',  'design.ini')}
         
-        {if is_set($aside.$class)}
+        {if is_set($aside.$pageclass)}
             {set $asidesource = "design:page_aside.tpl"}
-            {set $content= concat("design:", $aside.[$class])}
+            {set $content= concat("design:", $aside.[$pageclass])}
             {set $contentclass  = "span-15"}
         {elseif ezini('ColumnSettings', 'DefaultAside', 'design.ini')|eq('enabled')}
             {set $asidesource   = 'design:page_aside.tpl'}
@@ -33,9 +33,9 @@
             {set $contentclass  = "span-15"}
         {/if}        
         
-        {if is_set($positions[$class])|not}{set $class = 'default'}{/if}
+        {if is_set($positions[$pageclass])|not}{set $pageclass = 'default'}{/if}
         {if and(    is_string( $asidesource ),
-                    $positions[$class]|eq('before') )}
+                    $positions[$pageclass]|eq('before') )}
             {ezini('ColumnSettings', 'AsidePosition',  'design.ini')}
             {cache-block keys=$asidesource}
             {include uri=$asidesource content=$content}
@@ -55,7 +55,7 @@
         </section>
         
         {if and(    is_string( $asidesource ),
-                    $positions[$class]|eq('after') )}
+                    $positions[$pageclass]|eq('after') )}
             {cache-block keys=$asidesource}
             {include uri=$asidesource content=$content class="last"}
             {/cache-block}

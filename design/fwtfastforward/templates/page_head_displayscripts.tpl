@@ -10,3 +10,4 @@
 {/foreach}
 {undef $frontendjss}
 {undef $jsfilelist}
+{ezscript_load( array( ezini( 'JavaScriptSettings', 'JavaScriptList', 'design.ini' ), ezini( 'JavaScriptSettings', 'FrontendJavaScriptList', 'design.ini' ) ) )}

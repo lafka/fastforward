@@ -1,10 +1,10 @@
 {if is_set($content)|not}
     {def $content = 'design:error/aside/404.tpl'}
 {/if}
-{if is_set($class)|not}
+{if is_set($pageclass)|not}
 
 {/if}
-    <aside class="span-8 {$class}">
+    <aside class="span-8 {$pageclass}">
         {if $content|eq('design:page_aside.tpl')}
             <h2>Default sidebar</h2>
             This is the default sidebar. You should override.
