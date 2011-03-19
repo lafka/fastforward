@@ -1,5 +1,5 @@
 <hgroup>
-    {attribute_view_gui attribute=$object.data_map.name view=title size=2}
+    {attribute_view_gui attribute=$object.data_map.name view=title size=2 link=$object.url_alias}
     {attribute_view_gui attribute=$object.data_map.sub_title view=title size=4}
 </hgroup>
 {attribute_view_gui attribute=$object.data_map.body}
