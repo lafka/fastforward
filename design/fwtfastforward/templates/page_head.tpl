@@ -1,6 +1,6 @@
 {def    $enable_help=true() 
         $enable_link=true()
-        $disable_meta_language=false()}
+        $disable_meta_language=true()}
 
 {def $path=$module_result.path}
 {def $reverse_path=array()}

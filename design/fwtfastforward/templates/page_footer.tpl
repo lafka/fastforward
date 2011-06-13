@@ -1,4 +1,4 @@
-    <footer>
+    <html5:footer>
         <div class="container">
             <div class="span-12">
                 <p>
@@ -8,11 +8,11 @@
                     Copyright &copy; FWT 2010.
                 </p>
             </div>
-            <nav class="push-5 span-5 last>
+            <html5:nav class="push-5 span-5 last">
                 <ul>
                     <li><a href="#">@todo footer links</a></li>
                 </ul>
-                <div class="clear">&nbsp;</div>
-            </nav>
+                <div class="clear"> </div>
+            </html5:nav>
         </div>
-    </footer>
+    </html5:footer>

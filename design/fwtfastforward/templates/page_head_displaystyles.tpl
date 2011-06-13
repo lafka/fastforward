@@ -1,13 +1,9 @@
-{def $frontendcss = ezini( 'StylesheetSettings', 'FrontendCSSFileList', 'design.ini' ) 
- $cssfilelist = ezini( 'StylesheetSettings', 'CSSFileList',         'design.ini' )}
- 
-{foreach $cssfilelist as $file}
+{if is_unset( $load_css_file_list )}
+    {def $load_css_file_list = true()}
+{/if}
 
-    <link rel="stylesheet" href={concat( 'stylesheets/', $file)|ezdesign()}' media="all" />
-{/foreach}
-{foreach $frontendcss as $file}
-
-    <link rel="stylesheet" href={concat( 'stylesheets/', $file)|ezdesign} media="all" />
-{/foreach}
-{undef $frontendcss}
-{undef $cssfilelist}
+{ezcss_load( array( 'websitetoolbar.css',
+                      ezini( 'StylesheetSettings', 'CSSFileList', 'design.ini', 'extension/fwttinymesh/settings' ),
+                      ezini( 'StylesheetSettings', 'FrontendCSSFileList', 'design.ini', 'extension/fwttinymesh/settings' ) ))}
+                      
+<link rel="stylesheet" type="text/css" href={"stylesheets/print.css"|ezdesign()} media="print" />

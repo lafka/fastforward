@@ -61,12 +61,12 @@
             {/cache-block}
         {/if}
         
-        <div class="clear">&nbsp;</div>
+        <div class="clear"> </div>
     </div>
 </div>
     {cache-block}
     {include uri="design:page_footer.tpl"}
     {/cache-block}
-    <div class="clear">&nbsp;</div>
+    <div class="clear"> </div>
 </body>
 </html>

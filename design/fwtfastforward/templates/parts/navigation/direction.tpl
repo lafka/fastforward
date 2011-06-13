@@ -46,8 +46,8 @@
 {def $previous = fetch( 'content', 'list', $fetchParams )}
 {set $fetchParams = $fetchParams|merge( $nextParams )}
 {def $next = fetch( 'content', 'list', $fetchParams )}
-<nav class="direction">
+<html5:nav class="direction">
 <!-- @todo fix to only show if there is a item in that direction -->
     <a class="left" href={$previous.0.url_alias|ezurl} title="{"Previous"|i18n('node/view')}">&laquo; {$previous.0.name|wash()}</a>
     <a class="right" href={$next.0.url_alias|ezurl} title="{"Previous"|i18n('node/view')}">{$next.0.name|wash()} &raquo;</a>
-</nav>
+</html5:nav>

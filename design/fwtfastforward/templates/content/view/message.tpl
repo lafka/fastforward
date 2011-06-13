@@ -15,7 +15,7 @@
     </tr>
     <tr><td>
 
-    <table cellspacing="0" cellpadding="0"><tr><td>&nbsp;&nbsp;</td><td>
+    <table cellspacing="0" cellpadding="0"><tr><td>  </td><td>
     {attribute_view_gui attribute=$ContentObjectAttribute:item}</td></tr></table>
     
     </td></tr>

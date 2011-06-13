@@ -1,4 +1,4 @@
-<article class="embed">
+<html5:article class="embed">
     <div class="span-3 date">
          {$object.object.published|l10n('shortdate')}
     </div>
@@ -9,4 +9,4 @@
             <a href={$object.url_alias|ezurl} title="{$object.name|wash()}">{"Read more..."|i18n('design/base')}</a>
         </p>
         </div>
-</article>
+</html5:article>

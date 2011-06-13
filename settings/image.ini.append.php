@@ -1,4 +1,5 @@
 <?php /* #?ini charset="utf-8"?
+[AliasSettings]
 AliasList[]=banner
 AliasList[]=banner_full
 

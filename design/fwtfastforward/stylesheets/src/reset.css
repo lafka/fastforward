@@ -17,8 +17,8 @@ a, abbr, acronym, address, code,
 del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, dialog, figure, footer, header,
-hgroup, nav, section {
+html5\:article, html5\:aside, html5\:dialog, html5\:figure, html5\:footer, html5\:header,
+html5\:hgroup, html5\:nav, html5\:section {
   margin: 0;
   padding: 0;
   border: 0;
@@ -30,8 +30,8 @@ hgroup, nav, section {
 }
 
 /* This helps to make newer HTML5 elements behave like DIVs in older browers */ 
-article, aside, dialog, figure, footer, header,
-hgroup, nav, section {
+html5\:article, html5\:aside, html5\:dialog, html5\:figure, html5\:footer, html5\:header,
+html5\:hgroup, html5\:nav, html5\:section {
     display:block;
 }
 

@@ -1,7 +1,7 @@
-            <nav class="main horizontal">
+            <html5:nav class="main horizontal">
                 {def $nav = fetch('content', 'list', hash(
                     'parent_node_id', ezini('NodeSettings', 'RootNode', 'content.ini'),
-                    'sort_by', array( 'priority', false() ),
+                    'sort_by', array( 'priority', true() ),
                     'depth', 1))}
                 {if count($nav)|gt(0)}
                 <ul>
@@ -13,7 +13,7 @@
                         {set $children = '<ul class="child">'}
                         {foreach $item.children as $child}
                             {if $child.node_id|eq( $module_result.node_id)}{set $cssclass = $cssclass|append(" current") $parentclass = ' active'}{/if}
-                            {set $children = $children|append("\t\t", 
+                            {set $children = $children|concat("\t\t", 
                                     '<li class="', 
                                     $cssclass, 
                                     '"><a href=',
@@ -27,8 +27,10 @@
                                 )}
 
                         {/foreach}
-                        {set $children = $children|append('</ul>')}
+                        {set $children = $children|concat('</ul>')}
                         {set $cssclass = $parentclass}
+                    {else}
+                        {set $children = ''}
                     {/if}
                     {*  @todo if $module_result.path containes the the id of $item, class need to be set to current-something *}
                     {if $item.node_id|eq( $module_result.node_id)}{set $cssclass = $cssclass|append(" current")}{/if}
@@ -41,4 +43,4 @@
                     </li>
                 {/foreach}
                 </ul>
-            </nav>
+            </html5:nav>
