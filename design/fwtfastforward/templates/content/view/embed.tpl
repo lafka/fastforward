@@ -1,1 +1,1 @@
-<a href={$object.url_alias|ezurl}>{$object.name|wash}</a>
+{include uri=concat('design:content/view/', $object.class_identifier, '/embed.tpl')}

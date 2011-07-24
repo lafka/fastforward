@@ -1,6 +1,6 @@
 <html5:article id="node-{$node.main_node_id}" class="content-view full {$node.object.class_identifier}">
     <html5:hgroup>
-        {attribute_view_gui attribute=$node.object.data_map.name view=title size=1}
+        {attribute_view_gui attribute=$node.object.data_map.name title=true size=1}
     </html5:hgroup>
     
 {def $name_pattern = $node.object.content_class.contentobject_name|explode('>')|implode(',') $name_pattern_array = array('enable_comments', 'enable_tipafriend', 'show_children', 'show_children_exclude', 'show_children_pr_page')}

@@ -2,7 +2,7 @@
     {def $object = $node}
 {/if}
 <html5:article class="article" id="object-{$object.contentobject_id}">
-    {attribute_view_gui attribute=$object.data_map.title view=title}
+    {attribute_view_gui attribute=$object.data_map.title title=true}
 
     {attribute_view_gui attribute=$object.data_map.author}
     

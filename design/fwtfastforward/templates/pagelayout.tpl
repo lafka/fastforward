@@ -49,10 +49,10 @@
             {include uri='design:page_toolbar.tpl'}
         {/if}
 
-        <section id="content" class="{$contentclass}">
+        <html5:section id="content" class="{$contentclass}">
             {include uri="design:page_warning.tpl"}
             {include uri="design:page_mainarea.tpl"}
-        </section>
+        </html5:section>
         
         {if and(    is_string( $asidesource ),
                     $positions[$pageclass]|eq('after') )}

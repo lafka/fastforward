@@ -12,3 +12,8 @@ html5\:nav li.active a, html5\:nav li.current > a {font-weight: bold}
  html5\:nav.horizontal li ul.child {display: none; background: #fff;}
  html5\:nav.horizontal li:hover ul.child{ display: block;position:absolute;background: #F7F7F7; border-bottom: 1px solid #ddd; clear: both;z-index:1000; width: 15em;}
  html5\:nav.horizontal li li {clear: both;}
+ 
+ ul.tags {margin:0px; padding:0px;}
+ ul.tags > li { float: left;  display: inline;margin: 0em 1em 0em 0em;list-style:none; color: #fff;}
+ ul.tags > li > a { color: #FFF; text-decoration:none; background: #333;padding: 0.5em 1em;}
+ ul.tags > li > a:hover { background: #111; text-decoration: underline}
