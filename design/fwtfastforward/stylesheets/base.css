@@ -21,6 +21,31 @@ html5\:footer { clear: both; }
 .no-padding { padding: 0px; }
 .no-margin  { margin:  0px; }
 .start      { margin-top: 1em;}
-li.list-view  { list-style: none; }
-li.list-view a {  padding: 8px 10px 10px; display:inline-block; border-bottom: 1px solid #ccc; width:240px; height:1em; overflow: hidden;}
-li.list-view a:hover { background: #eee; border-bottom: 1px solid #bbb;}
+
+
+/**
+ * Standard things, clear after things are embedded
+ */
+.embedded, .subtree-embed-inline, .subtree-embed, .subtree-line { clear: both; }
+
+
+/**
+ * Table view and float view, a must have
+ */
+.flow-view, .list-view { margin: 0px; padding: 0px; clear: both;}
+.flow-view .title a, .list-view .title a {font-size: 1.3em;}
+
+.flow-view > * { float: left;}
+.flow-view div.clear { border: none; height: 1px; margin: -1px 0 0 0; background: transparent; padding: 0px;}
+
+.list-view a { border-bottom: 1px solid #eee; display: block; padding: 1em 0 0.3em;clear: both; vertical-align: top;}
+.list-view a img { display: inline; width: 30px; height: 30px; margin: -0.1em 0.5em 0 0.5em;}
+.list-view a:hover { background: #FAFAFA; cursor: pointer; border-color: #ddd; }
+ul.list-view, ul.flow-view { list-style: none; }
+
+/**
+ * Split table rows into 50/50 width
+ */
+table.renderedtable tr.split td { width: 50%; }
+
+td { vertical-align: top; }
