@@ -4,6 +4,14 @@
 [embed]
 AvailableViewModes[]=subtree
 AvailableViewModes[]=sidebar
+AvailableClasses[]=embedded
+AvailableClasses[]=subtree-line
+AvailableClasses[]=subtree-embed
+AvailableClasses[]=subtree-embed-inline
+AvailableClasses[]=subtree-line-flow
+AvailableClasses[]=subtree-embed-flow
+AvailableClasses[]=subtree-embed-inline-flow
+Defaults[class]=embedded
 
 [CustomTagSettings]
 AvailableCustomTags[]=separator
@@ -25,6 +33,9 @@ CustomAttributesDefaults[align]=right
 CustomAttributesDefaults[limit]=5
 CustomAttributesDefaults[like]=left_menu
 #menu modes: 'left_menu' | 'top_menu' | 'children' or ''
+
+[tr]
+AvailableClasses[]=split
 
 [video]
 CustomAttributes[]=width
