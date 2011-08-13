@@ -1,9 +1,21 @@
-{if and(is_set($pageclass)|not,is_set($module_result.content_info))}{def $pageclass = $module_result.content_info.class_identifier}{elseif is_set($pageclass)|not}{def $pageclass='unknown'}{if $module_result.ui_component|eq('error')}{set $pageclass='error'}{/if}{/if}{if $module_result.node_id|eq(ezini('NodeSettings', 'RootNode', 'content.ini'))}{set $pageclass='frontpage'}{/if}<!DOCTYPE html>
+{if and(is_set($pageclass)|not, is_set($module_result.content_info.class_identifier))}
+    {def $pageclass = $module_result.content_info.class_identifier}
+{elseif is_set($pageclass)|not}
+    {def $pageclass='unknown'}
+    {if $module_result.ui_component|eq('error')}
+        {set $pageclass='error'}
+    {/if}
+{/if}
+{if and( is_set($module_result.content_info.class_identifier),
+         $module_result.node_id|eq(ezini('NodeSettings', 'RootNode', 'content.ini')) )}
+    {set $pageclass='frontpage'}
+{/if}
+<!DOCTYPE html>
 {def $pagedata         = ezpagedata()
      $locales          = fetch( 'content', 'translation_list' )
      $pagedesign       = $pagedata.template_look
      $current_node_id  = $pagedata.node_id}
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:html5="http://www.w3.org/1999/xhtml">
 <head>
 {include uri="design:page_head.tpl"}
 {include uri="design:page_head_displaystyles.tpl"}
@@ -38,7 +50,7 @@
                     $positions[$pageclass]|eq('before') )}
             {ezini('ColumnSettings', 'AsidePosition',  'design.ini')}
             {cache-block keys=$asidesource}
-            {include uri=$asidesource content=$content}
+            {include uri=$asidesource content=$content module_result=$module_result}
             {/cache-block}
             {set $contentclass = $contentclass|append(" last")}
         {elseif ezini('ColumnSettings', 'ContentHasColborder', 'design.ini')|eq('enabled')}
@@ -57,7 +69,7 @@
         {if and(    is_string( $asidesource ),
                     $positions[$pageclass]|eq('after') )}
             {cache-block keys=$asidesource}
-            {include uri=$asidesource content=$content class="last"}
+            {include uri=$asidesource content=$content pageclass="last" module_result=$module_result}
             {/cache-block}
         {/if}
         

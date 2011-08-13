@@ -1,1 +1,4 @@
-{if $object.url_alias}<a href={$object.url_alias|ezurl}>{/if}{$object.name|wash}{if $object.url_alias}</a>{/if}
+{if get_type($object)|eq('object[eZContentObjectTreeNode]')}
+    {set $object = $object.object}
+{/if}
+{include uri=concat('design:content/view/', $object.class_identifier, '/line.tpl') object=$object}

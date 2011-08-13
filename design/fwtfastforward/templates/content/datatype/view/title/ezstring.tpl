@@ -1,5 +1,3 @@
-TITLE
-
 {if is_set($size)|not()}{def $size=2}{/if}
 {if is_set($id)}{set $id = concat(' id="',$id,'"')}{else}{def $id=''}{/if}
 {if is_set($class)}{set $class = concat(' class="',$class,'"')}{else}{def $class=''}{/if}

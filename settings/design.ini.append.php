@@ -18,7 +18,7 @@ CSSFileList[]=plugins/silk-icons/sprite.css
 CSSFileList[]=menu.css
 CSSFileList[]=websitetoolbar.css
 FrontendCSSFileList[]
-FrontendCSSFileList[]=screen.css
+FrontendCSSFileList[]=base.css
 
 [ColumnSettings]
 # Enabling DefaultAside will result in ALWAYS showing a sidebar,
@@ -31,8 +31,8 @@ ContentHasColborder=enabled
 ClassAside[]
 ClassAside[default]=parts/navigation/children.tpl
 ClassAside[error]=error/aside/default.tpl
+ClassAside[frontpage]=content/view/frontpage/sidebar.tpl
 
-[RowSettings]
-ClassHasFeatured[]
-ClassHasBottomFeatured[]
+[ContentSettings]
+Copyright=This webpage is <a href="http://www.lovdata.no/all/nl-19610512-002.html">protected by Norwegian law</a>
 */ ?>

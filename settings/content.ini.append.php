@@ -1,6 +1,10 @@
 <?php /* #?ini charset="utf-8"?
 # eZ publish configuration file for content
 
+[embed]
+AvailableViewModes[]=subtree
+AvailableViewModes[]=sidebar
+
 [CustomTagSettings]
 AvailableCustomTags[]=separator
 AvailableCustomTags[]=children_menu

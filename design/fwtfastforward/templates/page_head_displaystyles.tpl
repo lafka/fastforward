@@ -3,7 +3,7 @@
 {/if}
 
 {ezcss_load( array( 'websitetoolbar.css',
-                      ezini( 'StylesheetSettings', 'CSSFileList', 'design.ini', 'extension/fwttinymesh/settings' ),
-                      ezini( 'StylesheetSettings', 'FrontendCSSFileList', 'design.ini', 'extension/fwttinymesh/settings' ) ))}
+                      ezini( 'StylesheetSettings', 'CSSFileList', 'design.ini' ),
+                      ezini( 'StylesheetSettings', 'FrontendCSSFileList', 'design.ini' ) ))}
                       
 <link rel="stylesheet" type="text/css" href={"stylesheets/print.css"|ezdesign()} media="print" />
