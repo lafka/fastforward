@@ -1,4 +1,6 @@
-{if is_set($id)|not()}
+{if get_type($object)|eq('object[eZContentObjectTreeNode]')}
+    {set $object = $object.object}
+{/if}{if is_set($id)|not()}
     {def $id = concat( "frontpage-", first_set($object.id, $object.contentobject_id))}
 {/if}
 
@@ -6,5 +8,9 @@
     {if or(is_set($title)|not(), $title|eq(true()))}
         {attribute_view_gui attribute=$object.data_map.name view=title}
     {/if}
-    {attribute_view_gui attribute=$object.data_map.column}
+    {if $object.data_map.column.has_content}
+        {attribute_view_gui attribute=$object.data_map.column}
+    {else}
+        {attribute_view_gui attribute=$object.data_map.body}
+    {/if}
 </div>
