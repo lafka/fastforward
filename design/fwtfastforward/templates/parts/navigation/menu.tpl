@@ -12,6 +12,7 @@
                     {if $item.children_count|gt(0)}
                         {set $children = '<ul class="child">'}
                         {foreach $item.children as $child}
+                            {set $cssclass = ''}
                             {if $child.node_id|eq( $module_result.node_id)}{set $cssclass = $cssclass|append(" current") $parentclass = ' active'}{/if}
                             {set $children = $children|concat("\t\t", 
                                     '<li class="', 

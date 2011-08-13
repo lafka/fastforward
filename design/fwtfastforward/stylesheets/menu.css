@@ -4,7 +4,7 @@ html5\:nav.horizontal.right li { float: right; }
 html5\:nav.horizontal li:last, ul.menu.horizontal li.last { clear: both; }
 
 html5\:nav li a {text-decoration: none; padding: 0.6em 1em; }
-html5\:nav li.active a, html5\:nav li.current > a {font-weight: bold}
+html5\:nav li.active > a, html5\:nav li.current > a {font-weight: bold}
 
 /**
  * Css drop down for horizontal menu
