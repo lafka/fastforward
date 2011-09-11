@@ -1,5 +1,8 @@
 <?php /* #?ini charset="utf-8"?
-# eZ publish configuration file for content
+
+[ClassAttributeSettings]
+CategoryList[image]=Image related
+CategoryList[title]=Title group
 
 [embed]
 AvailableViewModes[]=subtree

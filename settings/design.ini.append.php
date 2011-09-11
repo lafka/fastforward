@@ -5,6 +5,7 @@ DesignExtensions[]=fwtfastforward
 # List of javascripts to use in footer
 [JavaScriptSettings]
 JavaScriptFooterList[]
+JavaScriptFooterList[]=fwtfastforward.js
 
 [StylesheetSettings]
 CSSFileList[]
