@@ -10,7 +10,7 @@ html5\:nav li.active > a, html5\:nav li.current > a {font-weight: bold}
  * Css drop down for horizontal menu
  */
  html5\:nav.horizontal li ul.child {display: none; background: #fff;}
- html5\:nav.horizontal li:hover ul.child{ display: block;position:absolute;background: #F7F7F7; border-bottom: 1px solid #ddd; clear: both;z-index:1000; width: 15em;}
+ html5\:nav.horizontal li:hover ul.child{ display: block;position:absolute;background: #FFF; border: 1px solid #FFF; border-color: transparent #EEE #DDD #FAFAFA;clear: both;z-index:1000; width: 15em;}
  html5\:nav.horizontal li li {clear: both;}
  
  ul.tags {margin:0px; padding:0px;}

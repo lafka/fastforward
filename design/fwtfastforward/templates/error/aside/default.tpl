@@ -1,15 +1,12 @@
-{def $title = '' $body = ''
-    $parts = $module_result.path|extract_right(1).0.text}  
-{set $parts = $parts|explode(" ")}
-{set $item  = $parts|extract_right(1).0|extract(1,-1)}
-{undef $parts}
+{def $title = '' $body = '' $include = false()
+    $item = $module_result.path|extract_right(1).0.text|explode(' ').1|extract(1, -1)}
 {switch match=$item}
     {case match="1"}
-        {set $title = "Access denied"|i18n("design/standard/error/kernel")}
-        {set $body  = 'Not found<br /><br />@todo better error message'}
+        {set $title = "Access denied"|i18n("design/standard/error/kernel")
+             $include = 'design:user/login.tpl'}
     {/case}
     {case match="2"}
-        {set $title = "Not found"|i18n("design/standard/error/kernel")}
+        {set $title = ""|i18n("design/standard/error/kernel")}
         {set $body  = 'Not found<br /><br />@todo better error message'}
     {/case} 
     {case match="3"}
@@ -33,8 +30,8 @@
         {set $body  = 'Not found<br /><br />@todo better error message'}
     {/case}
     {case match="22"}
-        {set $title = "View is disabled"|i18n("design/standard/error/kernel",,array($parameters.check.view,$parameters.check.module))}
-        {set $body  = 'Disabled view<br /><br />@todo better error message'}
+        {*set $title = "View is disabled"|i18n("design/standard/error/kernel",,array($parameters.check.view,$parameters.check.module))
+             $include = 'design*}
     {/case}
     {case}
         {set $title = 'Unknown error'}
@@ -42,7 +39,12 @@
     {/case}
 {/switch}
 
+        {if $include|eq(false())|not()}
+            {include uri=$include}
+        {elseif $title|not()}
     <h2>{$title}</h2>
     <p>
         {$body}
     </p>
+        {/if}
+   

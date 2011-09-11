@@ -6,7 +6,7 @@
 
 <div class="frontpage embed" id="{$id}">
     {if or(is_set($title)|not(), $title|eq(true()))}
-        {attribute_view_gui attribute=$object.data_map.name view=title}
+        {$object.main_node.name}
     {/if}
     {if $object.data_map.column.has_content}
         {attribute_view_gui attribute=$object.data_map.column}

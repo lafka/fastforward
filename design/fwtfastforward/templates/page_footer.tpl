@@ -16,3 +16,4 @@
             </html5:nav>
         </div>
     </html5:footer>
+    {ezscript_load( array( ezini( 'JavaScriptSettings', 'JavaScriptFooterList', 'design.ini' ) ) )}

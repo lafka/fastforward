@@ -1,7 +1,7 @@
 <form method="post" action={"/user/login/"|ezurl}>
 
     <div class="login">
-        <h1>{"Login"|i18n("design/standard/user")}</h1>
+        <h2>{"Login"|i18n("design/standard/user")}</h2>
 
     {if $User:warning.bad_login}
         <div class="error">
@@ -45,7 +45,6 @@
     {/if}
     <div class="group">
             <input class="main button" type="submit" name="LoginButton" value="{'Login'|i18n('design/standard/user','Button')}" tabindex="4" />
-            <input class="button" type="submit" name="RegisterButton" value="{'Sign Up'|i18n('design/standard/user','Button')}" tabindex="5" />
         </div>
         
         <input type="hidden" name="RedirectURI" value="{$User:redirect_uri|wash}" />
@@ -55,4 +54,5 @@
             <input name="Last_{$key}" value="{$item}" type="hidden" />
         {/foreach}
     {/if}
+    </div>
 </form>

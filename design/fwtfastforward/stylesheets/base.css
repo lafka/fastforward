@@ -21,14 +21,25 @@ html5\:footer { clear: both; }
 .no-padding { padding: 0px; }
 .no-margin  { margin:  0px; }
 .start      { margin-top: 1em;}
+.hide, .hidden, input.hide, input.hidden { display: none; }
+input { padding: 0.2em 0.5em 0.4em; }
+input.box { padding: 0.5em; }
 
+label { font-weight: bold; padding-right: 0.5em; display: block; white-space: nowrap; }
+div.block { margin: 0.5em; }
 
+.edit div.block { padding-bottom: 1em;}
+div.block div.element, div.block div.halfelement { padding-right: 1em; float: left; }
+
+div.block > label { clear: both; display:block;}
+div.block > div.date > div.element { float: left; }
 /**
  * Standard things, clear after things are embedded
  */
 .embedded, .subtree-embed-inline, .subtree-embed, .subtree-line { clear: both; }
 
 
+body.error html5\:aside.error { background: transparent; border: none; color: #333; padding: 0px;}
 /**
  * Table view and float view, a must have
  */
@@ -38,8 +49,9 @@ html5\:footer { clear: both; }
 .flow-view > * { float: left;}
 .flow-view div.clear { border: none; height: 1px; margin: -1px 0 0 0; background: transparent; padding: 0px;}
 
-.list-view a { border-bottom: 1px solid #eee; display: block; padding: 1em 0 0.3em;clear: both; vertical-align: top;}
-.list-view a img { display: inline; width: 30px; height: 30px; margin: -0.1em 0.5em 0 0.5em;}
+.list-view a { border-bottom: 1px solid #eee; display: block; padding: 1em 0 0.3em;clear: both;}
+.list-view a span { vertical-align: top;}
+.list-view a img { display: inline; width: 30px; height: 30px; }
 .list-view a:hover { background: #FAFAFA; cursor: pointer; border-color: #ddd; }
 ul.list-view, ul.flow-view { list-style: none; }
 

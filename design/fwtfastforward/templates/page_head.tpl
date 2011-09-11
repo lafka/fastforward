@@ -15,16 +15,16 @@
 
     <title>{$site_title}</title>
 {if $site.redirect}
-
     <meta http-equiv="Refresh" content="{$site.redirect.timer}; URL={$site.redirect.location}" />
 {/if}
+
 {foreach $site.http_equiv as $key => $value}
-{if and( $disable_meta_language, $key|eq('Content-language') )}{continue}{/if}
-
+	{if and( $disable_meta_language, $key|eq('Content-language') )}{continue}{/if}
     <meta http-equiv="{$key|wash}" content="{$value|wash}" />
-{/foreach}{foreach $site.meta as $key => $value}
+{/foreach}
 
-    <meta name="{$key|wash}" content="{$value|wash}" />
+{foreach $site.meta as $key => $value}
+	<meta name="{$key|wash()}" content="{$value|wash()}" />
 {/foreach}
 
     <meta name="generator" content="eZ Publish" />
