@@ -5,11 +5,9 @@
 	{def $pageclass = ''}
 {/if}
 {if $position|eq('after')}
-	{set $pageclass = concat( $pageclass, ' last' )}
-{else}
-	{set $pageclass = concat( $pageclass, ' push-1' )}
+	{set $pageclass = concat( $pageclass, ' push-1 last' )}
 {/if}
-    <html5:aside class="push-1 span-8 {$pageclass}">
+    <html5:aside class="span-8 {$pageclass}">
         {if $content|eq('design:page_aside.tpl')}
             <h2>Default sidebar</h2>
             This is the default sidebar. You should override.
