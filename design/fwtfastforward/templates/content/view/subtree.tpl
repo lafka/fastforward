@@ -14,9 +14,11 @@
     {case match='subtree-embed-inline-flow'}{set $subtreeview = 'embed-inline'}{/case}
     {case}{/case}
 {/switch}
-
 <{$parent} class="{$type}-view">
-{foreach $object.main_node.children as $child}
+{if is_set($limit)|not}
+	{def $limit = $object.main_node.children_count}
+{/if}
+{foreach $object.main_node.children as $child max $limit}
     {if $parent|eq('ul')}<li class="title">{/if}
     {content_view_gui content_object=$child view=$subtreeview image=true}
     {if $parent|eq('ul')}</li>{/if}
