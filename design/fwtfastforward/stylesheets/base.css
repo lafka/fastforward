@@ -43,7 +43,8 @@ body.error html5\:aside.error { background: transparent; border: none; color: #3
 /**
  * Table view and float view, a must have
  */
-.flow-view, .list-view { margin: 0px; padding: 0px; clear: both;}
+.flow-view, .list-view { }
+ul.list-view { padding: 0px; }
 .flow-view .title a, .list-view .title a {font-size: 1.3em;}
 
 .flow-view > * { float: left;}
