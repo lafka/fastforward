@@ -15,6 +15,7 @@ AvailableClasses[]=subtree-line-flow
 AvailableClasses[]=subtree-embed-flow
 AvailableClasses[]=subtree-embed-inline-flow
 Defaults[class]=embedded
+Defaults[view]=embed
 
 [CustomTagSettings]
 AvailableCustomTags[]=separator
