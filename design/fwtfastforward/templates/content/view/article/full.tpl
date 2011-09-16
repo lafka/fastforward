@@ -14,7 +14,6 @@
     {attribute_view_gui attribute=$object.data_map.intro class="bold start" wrap=div}
 
     <hr />
-    <p><i>{"Published %date"|i18n('design/content/view', '', hash('%date', $object.object.published|l10n('date')))}</i></p>
 
     {attribute_view_gui attribute=$object.data_map.body}
 
