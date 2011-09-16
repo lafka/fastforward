@@ -25,9 +25,7 @@
 <body class="{$pageclass}">
 <div id="wrapper">
     <div id="main" class="container">
-        {cache-block}
         {include uri="design:page_header.tpl"}
-        {/cache-block}
 
         {def    $contentclass  = "span-24 lat"
                 $aside         = ezini('ColumnSettings', 'ClassAside', 'design.ini')
@@ -49,9 +47,7 @@
         {if and(    is_string( $asidesource ),
                     $positions[$pageclass]|eq('before') )}
             {ezini('ColumnSettings', 'AsidePosition',  'design.ini')}
-            {cache-block keys=$asidesource}
             {include uri=$asidesource content=$content module_result=$module_result}
-            {/cache-block}
             {set $contentclass = $contentclass|append(" last")}
         {elseif ezini('ColumnSettings', 'ContentHasColborder', 'design.ini')|eq('enabled')}
             {set $contentclass = $contentclass|append(' colborder')}
@@ -68,17 +64,13 @@
         
         {if and(    is_string( $asidesource ),
                     $positions[$pageclass]|eq('after') )}
-            {cache-block keys=$asidesource}
             {include uri=$asidesource content=$content pageclass="last" module_result=$module_result}
-            {/cache-block}
         {/if}
         
         <div class="clear"> </div>
     </div>
 </div>
-    {cache-block}
     {include uri="design:page_footer.tpl"}
-    {/cache-block}
     <div class="clear"> </div>
 </body>
 </html>
