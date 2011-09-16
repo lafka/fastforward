@@ -1,6 +1,6 @@
-{if get_type($object)|eq('object[eZContentObjectTreeNode]')}
-    {set $object = $object.object}
+{if is_set($cssclass)|not()}
+	{def $cssclass = ''}
 {/if}
-<html5:section class="image">
-    
-</html5:section>
+<div class="{$object.class_identifier} full {$cssclass}" id="object-{$object.id}">
+{include uri=concat('design:content/view/', $object.class_identifier, '/full.tpl') object=$object}
+</div>

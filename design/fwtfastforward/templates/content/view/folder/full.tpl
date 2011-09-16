@@ -12,8 +12,15 @@
 {/foreach}
     {attribute_view_gui attribute=$node.data_map.description}
 </html5:article>
+{def $i = 0
+     $cssclass = ''}
 {if and($node.is_container, count($node.children)|gt(0))}
     {foreach $node.children as $child}
-        {content_view_gui content_object=$child view=concat($child.class_identifier, '/embed')}
+		{set $i = $i|inc()}
+		{set $cssclass = ''}
+		{if $i|mod(3)|eq(0)}
+			{set $cssclass = 'last'}
+		{/if}
+        {content_view_gui content_object=$child view=embed cssclass=$cssclass}
     {/foreach}
 {/if}
