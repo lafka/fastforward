@@ -20,7 +20,7 @@ silk icon set.
     To install fastforward open up a new terminal window, then navigate to the
     eZ Publish extension directory.
 
-    $ git clone http://github.com/lafka/fwtfastforward.git
+    $ git clone http://github.com/lafka/fastforward.git
 
 ==  Enabling the extension in eZ Publish admin interface
 
@@ -32,7 +32,7 @@ silk icon set.
     * In the second select the siteaccess you want to enable the extension for
     * Scrolldown to "ExtensionSettings" and click the edit icon located to the
       right of the "ActiveExtensions" line.
-    * Add a new line saying "=fwtfastforward"
+    * Add a new line saying "=fastforward"
 
 ==  Creating a basic extension of FastForward
 
@@ -46,7 +46,7 @@ silk icon set.
     * Create the folder "settings" under "t-ext"
     * Create the folder "design" under "t-ext"
     * Create the folder "t-ext" under "design" 
-    ( Alternative run this command from  you eZ Publish root: $ mkdir -p extensions/t-ext/design/t-ext/templates/ extensions/t-ext/design/t-ext/stylesheet extensions/t-ext/settings/ )
+    ( Alternative run this command from  you eZ Publish root: $ mkdir -p extensions/t-ext/{settings,design/t-ext/{templates,stylesheet}} )
 
 
     Add the settings needed:
@@ -64,6 +64,8 @@ silk icon set.
     design/t-ext/templates/content
     design/t-ext/templates/content/view/
     design/t-ext/templates/content/view/folder/
-    
+
+	( $ mkdir -p design/t-ext/templates/content/view/folder )
+
     Now if we want to create our new template for the full view of folders you just
     add a the full.tpl in here: design/t-ext/templates/content/view/folder/
