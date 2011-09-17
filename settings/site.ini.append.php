@@ -1,10 +1,10 @@
 <?php /*
 
 [TemplateSettings]
-ExtensionAutoloadPath[]=fwtfastforward
+ExtensionAutoloadPath[]=fastforward
 
 [RegionalSettings]
-TranslationExtensions[]=fwtfastforward
+TranslationExtensions[]=fastforward
 
 [RSSSettings]
 DefaultFeedItemClasses[folder]=article
