@@ -1,0 +1,84 @@
+/* Based on the excellent work of Eric Meyer: http://meyerweb.com/eric/tools/css/reset/ 
+   License: BSD License (http://www.opensource.org/licenses/bsd-license.php)
+*/
+
+html, body, div, span, applet, object, iframe,  p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, 
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, 
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, 
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%;
+                           font: inherit; vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1.2; }
+ol, ul { list-style: circle; }
+blockquote, q {	quotes: '“' '”'}
+blockquote:before, q:before { content: open-quote  }
+blockquote:after, q:after { content: close-quote }
+table {	border-collapse: collapse; border-spacing: 0; }
+
+/**
+ * Basic typography
+ */
+body { color: #222; background: transparent; font-family: "Deja vu sans", 
+	   "Helvetica Neue", Arial, Helvetica, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; color: #333; margin: 0 0 0.25em; 
+                         line-height: 1.25em; }
+
+h1 { font-size: 2.5em; line-height: 1em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img { margin: 0px; }
+
+p { margin: 0 0 1em; line-height: 1.25em; }
+
+pre, code, tt { font: 1em 'Deja vu sans-mono', 'andale mono', 'lucida console', 
+                monospace; line-height: 1.5em; }
+
+/**
+ * Basic layout, and probably the most specific style you will find
+ */
+body > * { width: 990px; margin: 2em auto 0; }
+body > header { margin-top: 0.5em; }
+#branding { width: 30%; display: inline-block; float: right; border-left: 1px solid #DDD; padding: 0.5em 0 0.5em 3.5%; }
+nav#top { width: 65%; display: inline-block; text-align: right; vertical-align:top; padding-top: 0.75em; margin-top: 1.2em; }
+
+/**
+ * Usefull for those times when you need a shortcut
+ */
+.clear { clear: both; height: 1px; margin: -1px 0 0; padding: 0px; line-height: 1px; }
+
+/**
+ * Compability with for those who feel they don't css3 selectors, we will use this concistently
+ * through the templates anyway
+ */
+.first { margin-left: 0; padding-left: 0; }
+.last { margin-right: 0; padding-right: 0; }
+.top { margin-top: 0; padding-top: 0; }
+.bottom { margin-bottom: 0; padding-bottom: 0; }
+
+/**
+ * Navigation and links
+ */
+a, a:visited { text-decoration: none; color: #15C; }
+a:focus, a:hover { color: #15C; text-decoration: underline;  }
+.current > a, a.current { font-weight: bold;}
+nav ul { list-style: none; }
+nav ul li a { padding: 0 1em; }
+nav#top ul { width: 100%; clear: both; margin: 0px; padding: 0px; position: relative; }
+nav#top ul li { clear: right; display: inline-block; vertical-align: top; }
+nav#top ul li a { text-align: center; }
+nav#top ul.child { padding-top: 0.75em;position: absolute; left: 0; display: none;}
+nav#top li:hover ul.child, nav#top li.current  {  }

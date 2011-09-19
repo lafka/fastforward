@@ -3,6 +3,7 @@
 [MenuSettings]
 AlwaysAvailable=enabled
 AvailableMenuArray[]
+ShowFrontpageItem=enabled
 
 [MenuContentSettings]
 ExtraMenuSubitemsCheck=disabled

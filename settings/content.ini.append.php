@@ -1,8 +1,9 @@
 <?php /* #?ini charset="utf-8"?
 
 [ClassAttributeSettings]
-CategoryList[image]=Image related
-CategoryList[title]=Title group
+#CategoryList[image]=Image related
+#CategoryList[title]=Title
+#CategoryList[title]=Meta
 
 [embed]
 AvailableViewModes[]=subtree
