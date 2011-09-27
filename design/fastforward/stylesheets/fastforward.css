@@ -1,5 +1,11 @@
 /* Based on the excellent work of Eric Meyer: http://meyerweb.com/eric/tools/css/reset/ 
    License: BSD License (http://www.opensource.org/licenses/bsd-license.php)
+
+   Colors are as following:
+		- body:      #333
+		- link:      #15C;
+		- error:     #DD4B39
+		- highlight: #4D90FE
 */
 
 html, body, div, span, applet, object, iframe,  p, 
@@ -18,8 +24,8 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { display: block; }
 
 body { line-height: 1.2; }
-ol, ul { list-style: circle; }
-blockquote, q {	quotes: '“' '”'}
+ol, ul { list-style: circle; padding: 0 0 0 2em;}
+blockquote, q {	quotes: “ ”; }
 blockquote:before, q:before { content: open-quote  }
 blockquote:after, q:after { content: close-quote }
 table {	border-collapse: collapse; border-spacing: 0; }
@@ -47,13 +53,18 @@ p { margin: 0 0 1em; line-height: 1.25em; }
 pre, code, tt { font: 1em 'Deja vu sans-mono', 'andale mono', 'lucida console', 
                 monospace; line-height: 1.5em; }
 
+b, strong, .bold { font-weight: bold; }
+i, em, italic, .emphasize { font-style: italic; }
+
 /**
  * Basic layout, and probably the most specific style you will find
  */
-body > * { width: 990px; margin: 2em auto 0; }
-body > header { margin-top: 0.5em; }
+body > * { width: 950px; margin: 0 auto 2em; }
+header { margin-top: 2em; margin-bottom: 1em; }
 #branding { width: 30%; display: inline-block; float: right; border-left: 1px solid #DDD; padding: 0.5em 0 0.5em 3.5%; }
 nav#top { width: 65%; display: inline-block; text-align: right; vertical-align:top; padding-top: 0.75em; margin-top: 1.2em; }
+footer { border-top: 1px solid #DDD; font-size: 0.9em; clear: both; }
+footer p { margin: 1em 2em 0; }
 
 /**
  * Usefull for those times when you need a shortcut
@@ -76,9 +87,44 @@ a, a:visited { text-decoration: none; color: #15C; }
 a:focus, a:hover { color: #15C; text-decoration: underline;  }
 .current > a, a.current { font-weight: bold;}
 nav ul { list-style: none; }
+nav ul li { overflow: auto; clear: both; }
 nav ul li a { padding: 0 1em; }
 nav#top ul { width: 100%; clear: both; margin: 0px; padding: 0px; position: relative; }
-nav#top ul li { clear: right; display: inline-block; vertical-align: top; }
+nav#top ul li { clear: right; display: inline; vertical-align: top; }
 nav#top ul li a { text-align: center; }
-nav#top ul.child { padding-top: 0.75em;position: absolute; left: 0; display: none;}
-nav#top li:hover ul.child, nav#top li.current  {  }
+nav#top ul.child { padding-top: 0.75em;position: absolute; right: 0; display: none;}
+nav#top li:hover ul.child, nav#top li.current ul.child { display: block; clear: both; width: auto;}
+
+/**
+ * Basic content style
+ *
+ */
+.embed .image { float: left; margin: 0 2em 2em 0; }
+.embed .image img { border: 2px solid #EEE !important; }
+.embed hgroup > * { border-bottom: 1px solid #EEE; margin-left: 135px; }
+
+/**
+ * Forms 
+ */
+label { clear: both; display: block; font-weight: bold; }
+label:after { content: ':'; }
+.error label, .error input[type=text], .error input[type=checkbox] { border-color: #DD4B39; 
+                                                                     border-style: solid; }
+
+select, input[type=text], 
+input[type=password] { padding: 0.4em 0.4em 0.4em; 
+                       margin-bottom: 0.6em; height: 1.2em; border-width: 1px; border-color: #ddd; 
+                       width: 100%; outline: none; vertical-align: bottom; }
+
+input[type=text]:hover { border-color: #ccc; }
+input[type=text]:focus { border-color: #4D90FE; border-style: solid; }
+
+/**
+ * Default table style
+ */
+table { margin: 1em 0; border-collapse: collapse; }
+tr.odd { background: #F7FBFF; }
+td { padding: 0.3em 1em; }
+th, td { text-align: center; vertical-align: middle; }
+thead th {  font: bold .2em/2em;}
+tfoot td, tfoot th { text-align: right; }
