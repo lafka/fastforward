@@ -12,7 +12,7 @@
 			'url_alias',    $root.url_alias,
 			'url_string',   $root.url_alias,
 			'text',         $root.name,
-			'is_selected',  $root.node_id|eq( $module_result.node_id ),
+			'is_selected',  and( is_set( $module_result.node_id), $root.node_id|eq( $module_result.node_id ) ),
 			'node',         $root
 	) ) }
 	{undef $root}
@@ -28,7 +28,7 @@
 
 					<ul class="child">
 					{foreach $item.node.children as $child}
-						<li class=""><a href={$child.url_alias|ezurl()} title="{$child.name|wash()}">{$child.name|wash()}</a></li>
+						<li class="{if $module_result.content_info.url_alias|contains( $child.url_alias )}current{/if}"><a href={$child.url_alias|ezurl()} title="{$child.name|wash()}">{$child.name|wash()}</a></li>
 					{/foreach}
 
 					</ul>

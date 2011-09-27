@@ -26,11 +26,20 @@ HeadRow[]=design:template/head/link.tpl
 HeadRow[]=design:template/head/style.tpl
 HeadRow[]=design:template/head/script.tpl
 ContentRow[]
-ContentRow[]=design:template/header.tpl
-ContentRow[]=design:template/warning.tpl
-ContentRow[]=design:template/content.tpl
-ContentRow[]=design:template/footer.tpl
-ContentRow[]=design:parts/website_toolbar.tpl
+ContentRow[Header]=design:template/header.tpl
+ContentRow[Warning]=design:template/warning.tpl
+ContentRow[Content]=design:template/content.tpl
+ContentRow[Footer]=design:template/footer.tpl
+ContentRow[Websitetoolbar]=design:template/ezwt-wrapper.tpl
+
+#[GridSettings]
+#Row[Header]=
+#Row[Content]=
+#
+#[ContentGrid]
+#Section[*]=design:template/content.tpl;design:design/aside/content.tpl
+#Node[127]=design:template/content2.tpl;design:design/aside/content.tpl
+#Class[frontpage]=node:2|design:custom.tpl;node:100-200|design:range.tpl
 
 [ColumnSettings]
 # Enabling DefaultAside will result in ALWAYS showing a sidebar,

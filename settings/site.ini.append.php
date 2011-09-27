@@ -14,4 +14,8 @@ FeedObjectAttributeMap[title]=title
 FeedObjectAttributeMap[description]=intro
 FeedObjectAttributeMap[category]=tags
 
+[SiteSettings]
+SiteName=Fast Forward ↝
+SiteURL=fwt.no/fastforward
+
 */ ?>

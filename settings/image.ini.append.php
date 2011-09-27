@@ -1,16 +1,11 @@
 <?php /* #?ini charset="utf-8"?
 [AliasSettings]
-AliasList[]=banner
-AliasList[]=banner_full
+AliasList[]=thumbnail
 
-[banner]
+[thumbnail]
 Reference=reference
 Filters[]
-Filters[]=geometry/scaledownonly=568;250
-
-[banner_full]
-Reference=reference
-Filters[]
-Filters[]=geometry/scaledownonly=950;300
+Filters[]=geometry/scaledownonly=200;
+Filters[]=geometry/crop=100;100;0;0
 
 */ ?>

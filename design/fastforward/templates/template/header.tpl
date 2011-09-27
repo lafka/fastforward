@@ -1,6 +1,6 @@
 	<header>
 
-		<h1 id="branding">{$site.title}</h1>
+		<h1 id="branding"><a href={""|ezurl()} title="{$site.title}">{$site.title}</a></h1>
 {include uri='design:template/navigation/top.tpl'}
 		
 	</header>

@@ -1,6 +1,0 @@
-<?php /* #?ini charset="utf-8"?
-# Add the file_exists function as an template operator
-[PHP]
-PHPOperatorList[file_exists]=file_exists
-*/
-?>
