@@ -59,12 +59,15 @@ i, em, italic, .emphasize { font-style: italic; }
 /**
  * Basic layout, and probably the most specific style you will find
  */
-body > * { width: 950px; margin: 0 auto 2em; }
-header { margin-top: 2em; margin-bottom: 1em; }
-#branding { width: 30%; display: inline-block; float: right; border-left: 1px solid #DDD; padding: 0.5em 0 0.5em 3.5%; }
-nav#top { width: 65%; display: inline-block; text-align: right; vertical-align:top; padding-top: 0.75em; margin-top: 1.2em; }
+body > * { width: 950px; margin: 2em auto 2em; }
+header { margin-top: 1em; margin-bottom: 5em; }
+#branding { width: 35%; display: inline-block; float: right; border-left: 1px solid #DDD; padding: 0.5em 0 0.5em 3.5%; }
+nav#top { width: 60%; display: inline-block; text-align: right; vertical-align:top; padding-top: 0.75em; margin-top: 1.2em; }
 footer { border-top: 1px solid #DDD; font-size: 0.9em; clear: both; }
 footer p { margin: 1em 2em 0; }
+section#content { clear: both; }
+.has-aside aside { width: 30%; float: left; margin: 0 6% 0 0; padding: 0; }
+.has-aside > * { width: 60%; padding-left: 36%; }
 
 /**
  * Usefull for those times when you need a shortcut
@@ -96,14 +99,6 @@ nav#top ul.child { padding-top: 0.75em;position: absolute; right: 0; display: no
 nav#top li:hover ul.child, nav#top li.current ul.child { display: block; clear: both; width: auto;}
 
 /**
- * Basic content style
- *
- */
-.embed .image { float: left; margin: 0 2em 2em 0; }
-.embed .image img { border: 2px solid #EEE !important; }
-.embed hgroup > * { border-bottom: 1px solid #EEE; margin-left: 135px; }
-
-/**
  * Forms 
  */
 label { clear: both; display: block; font-weight: bold; }
@@ -116,8 +111,8 @@ input[type=password] { padding: 0.4em 0.4em 0.4em;
                        margin-bottom: 0.6em; height: 1.2em; border-width: 1px; border-color: #ddd; 
                        width: 100%; outline: none; vertical-align: bottom; }
 
-input[type=text]:hover { border-color: #ccc; }
-input[type=text]:focus { border-color: #4D90FE; border-style: solid; }
+input[type=text]:hover, input[type=password]:hover { border-color: #ccc; }
+input[type=text]:focus, input[type=password]:focus { border-color: #4D90FE; border-style: solid; }
 
 /**
  * Default table style
@@ -128,3 +123,18 @@ td { padding: 0.3em 1em; }
 th, td { text-align: center; vertical-align: middle; }
 thead th {  font: bold .2em/2em;}
 tfoot td, tfoot th { text-align: right; }
+#debug th, #debug td { text-align: left; }
+
+/**
+ * Login page
+ */
+section#login aside { margin-top: 2.3em; }
+section#login p#forgot-password { text-align: right; font-size: 0.8em; }
+
+/**
+ * Basic content style
+ *
+ */
+.embed .image { float: left; margin: 0 2em 2em 0; }
+.embed .image img { border: 2px solid #EEE !important; }
+.embed hgroup > * { border-bottom: 1px solid #EEE;  }
