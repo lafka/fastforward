@@ -1,6 +1,6 @@
 {def $pagedata         = ezpagedata()}
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:html5="http://www.w3.org/1999/xhtml">
+<html lang="{$site.http_equiv['Content-language']}">
 	<head>
 
 {foreach ezini( 'RowSettings', 'HeadRow', 'design.ini' ) as $include}
