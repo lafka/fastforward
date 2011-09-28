@@ -128,7 +128,7 @@ tfoot td, tfoot th { text-align: right; }
 /**
  * Login page
  */
-section#login aside { margin-top: 2.3em; }
+section.user aside { margin-top: 2.3em; }
 section#login p#forgot-password { text-align: right; font-size: 0.8em; }
 
 /**
