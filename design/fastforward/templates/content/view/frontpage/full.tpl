@@ -2,6 +2,8 @@
 			<h1>{attribute_view_gui attribute=$object.data_map.name}</h1>
 		</hgroup>
 
+		{attribute_view_gui attribute=$object.data_map.body}
+
 		{* it's more cost-efficient to use SQL to limit that looping through children *}
 		{def $params = hash(
 			'parent_node_id', $node.node_id,
