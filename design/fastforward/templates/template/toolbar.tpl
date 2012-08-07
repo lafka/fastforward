@@ -18,7 +18,6 @@
 						<nav>
 							{if and(is_set($content_object.can_edit), $content_object.can_edit)}
 									<form method="post" action={"content/action"|ezurl}>
-										<input type="hidden" name="ClassID" value="{$classdef.id}" />
   										<input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
 										<input type="hidden" name="HasMainAssignment" value="1" />
 										<input type="hidden" name="ContentObjectID" value="{$content_object.id}" />
@@ -56,7 +55,7 @@
 									</span>
 								{elseif $class_list|count()}
 									<form method="post" action={"content/action"|ezurl}>
-										<input type="hidden" name="ClassID" value="{$classdef.id}" />
+										<input type="hidden" name="ClassID" value="{$class_list.0.id}" />
   										<input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
 										<input type="hidden" name="HasMainAssignment" value="1" />
 										<input type="hidden" name="ContentObjectID" value="{$content_object.id}" />
@@ -70,7 +69,6 @@
 							{/if}
 							{if and(is_set($content_object.can_move), $content_object.can_move)}
 								<form method="post" action={"content/action"|ezurl}>
-									<input type="hidden" name="ClassID" value="{$classdef.id}" />
   									<input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
 									<input type="hidden" name="HasMainAssignment" value="1" />
 									<input type="hidden" name="ContentObjectID" value="{$content_object.id}" />
@@ -86,7 +84,6 @@
 							         ne( $current_node.node_id, ezini( 'NodeSettings', 'MediaRootNode', 'content.ini' ) ),
 							         ne( $current_node.node_id, ezini( 'NodeSettings', 'UserRootNode', 'content.ini' ) ) )}
 								<form method="post" action={"content/action"|ezurl}>
-									<input type="hidden" name="ClassID" value="{$classdef.id}" />
   									<input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
 									<input type="hidden" name="HasMainAssignment" value="1" />
 									<input type="hidden" name="ContentObjectID" value="{$content_object.id}" />
@@ -99,7 +96,6 @@
 							{/if}
 							{if and(is_set($content_object.can_remove), $content_object.can_remove)}
 								<form method="post" action={"content/action"|ezurl}>
-									<input type="hidden" name="ClassID" value="{$classdef.id}" />
   									<input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
 									<input type="hidden" name="HasMainAssignment" value="1" />
 									<input type="hidden" name="ContentObjectID" value="{$content_object.id}" />
