@@ -111,7 +111,6 @@
 								</form>
 							{/if}
 							<ul class="nav pull-right">
-								<li class="navbar-text"><i>Welcome, {$user.contentobject.name}</i></li>
 								<li class="divider-vertical"></li>
 								<li><a href={"user/logout"|ezurl()}>Logout</a></li>
 							</ul>
