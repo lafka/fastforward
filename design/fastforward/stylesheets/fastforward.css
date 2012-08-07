@@ -51,10 +51,28 @@ pre, code, tt { font: 1em 'Deja vu sans-mono', 'andale mono', 'lucida console',
  * Basic layout, and probably the most specific style you will find
  */
 body > * { width: 990px; margin: 2em auto 0; }
+body > .toolbar {width: 100%; margin: 0; position: relative; }
 body > header { margin-top: 0.5em; }
 #branding { width: 30%; display: inline-block; float: right; border-left: 1px solid #DDD; padding: 0.5em 0 0.5em 3.5%; }
 nav#top { width: 65%; display: inline-block; text-align: right; vertical-align:top; padding-top: 0.75em; margin-top: 1.2em; }
 
+/**
+ * Toolbar
+ */
+.toolbar nav a i { margin-right: 0.5em; }
+.toolbar nav .dropdown:hover .dropdown-menu {
+	display: block;
+}
+.toolbar form { display: inline; }
+.toolbar .dropdown-menu li > form > input[type="submit"] { background: none; border: none; cursor: pointer;
+                                    display: block; padding: 3px 15px; clear: both;
+                                    font-weight: normal; line-height: 18px; color: #333333;
+                                    white-space: nowrap; width: 100%; text-align: left;}
+
+.toolbar .dropdown-menu li > form > input:hover,
+.toolbar .dropdown-menu .active > form > input[type="submit"],
+.toolbar .dropdown-menu .active > form > input[type="submit"]:hover {
+    color: #ffffff; text-decoration: none; background-color: #0088cc; }
 /**
  * Usefull for those times when you need a shortcut
  */

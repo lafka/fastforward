@@ -9,8 +9,8 @@ JavaScriptFooterList[]=fastforward.js
 
 [StylesheetSettings]
 CSSFileList[]
+CSSFileList[]=bootstrap.css
 CSSFileList[]=fastforward.css
-CSSFileList[]=websitetoolbar.css
 FrontendCSSFileList[]
 
 # The layout is devided up in rows. This list is looped through and included
@@ -26,11 +26,11 @@ HeadRow[]=design:template/head/link.tpl
 HeadRow[]=design:template/head/style.tpl
 HeadRow[]=design:template/head/script.tpl
 ContentRow[]
+ContentRow[]=design:template/toolbar.tpl
 ContentRow[]=design:template/header.tpl
 ContentRow[]=design:template/warning.tpl
 ContentRow[]=design:template/content.tpl
 ContentRow[]=design:template/footer.tpl
-ContentRow[]=design:parts/website_toolbar.tpl
 
 [ColumnSettings]
 # Enabling DefaultAside will result in ALWAYS showing a sidebar,
