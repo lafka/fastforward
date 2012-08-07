@@ -1,8 +1,8 @@
 {def $menu = treemenu( $module_result.path , , array( 'frontpage', 'folder', 'page' ), , 1)}
 {def $rootnode = ezini( 'NodeSettings', 'RootNode', 'content.ini' )}
 {if ezini( 'MenuSettings', 'ShowFrontpageItem', 'menu.ini' )|eq( 'enabled' )}
-	{def $root = fetch( 'content', 'node', hash( 
-		'node_id', $rootnode ) ) }
+	{def $root    = fetch( 'content', 'node', hash( 'node_id', $rootnode ) )
+	     $resnode = first_set($module_result.node_id, 2)}
 	{set $menu = $menu|prepend( hash( 
 			'id',           $root.node_id,
 			'level',        0,
@@ -12,10 +12,10 @@
 			'url_alias',    $root.url_alias,
 			'url_string',   $root.url_alias,
 			'text',         $root.name,
-			'is_selected',  $root.node_id|eq( $module_result.node_id ),
+			'is_selected',  $root.node_id|eq( $resnode ),
 			'node',         $root
 	) ) }
-	{undef $root}
+	{undef $root $resnode}
 {/if}
 
 		<nav id="top">
