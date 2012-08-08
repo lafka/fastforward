@@ -16,6 +16,6 @@
 
 		<article id="embed-inline-{$object.class_identifier}-{$object.id}" class="{$object.class_identifier} embed-inline">
 
-		{include uri=concat( 'content/view/', $object.class_identifier, '/full.tpl' ) object=$object node=$node}
+		{include uri=concat( 'design:content/view/', $object.class_identifier, '/embed-inline.tpl' ) object=$object node=$node}
 
 		</article>
