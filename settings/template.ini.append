@@ -2,5 +2,7 @@
 # Add the file_exists function as an template operator
 [PHP]
 PHPOperatorList[file_exists]=file_exists
+PHPOperatorList[var_dump]=var_dump
+PHPOperatorList[dump]=var_dump
 */
 ?>
