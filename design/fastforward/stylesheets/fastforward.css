@@ -25,6 +25,7 @@ nav#top { width: 65%; display: inline-block; text-align: right; vertical-align:t
 /**
  * Toolbar
  */
+.navbar.toolbar {position: relative;}
 .toolbar nav a i { margin-right: 0.5em; }
 .toolbar nav .dropdown:hover .dropdown-menu {
 	display: block;
