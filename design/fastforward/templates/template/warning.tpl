@@ -1,5 +1,5 @@
 {if and( is_set($warning_list), count($warning_list)|gt(0) )}
-	<section id="warning" class="warning">
+	<section id="warning" class="warning container">
 
 		{foreach $warning_list as $warning}
 
