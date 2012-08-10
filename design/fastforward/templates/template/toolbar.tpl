@@ -33,7 +33,7 @@
 								{if $class_list|count()|gt(1)}
 									<span class="dropdown">
 
-										<a data-toggle="dropdown" class="btn btn-inverse"> 
+										<a data-toggle="dropdown" class="btn btn-inverse">
 											<i class="icon-plus icon-white"></i>Create new child
 											<span class="caret" />
 										</a>
@@ -75,12 +75,12 @@
 									<input type="hidden" name="NodeID" value="{$current_node.node_id}" />
 									<input type="hidden" name="ContentNodeID" value="{$current_node.node_id}" />
 									<button class="btn btn-inverse" name="MoveNodeButton">
-										<i class="icon-move icon-white"></i> Move {$class_name} 
+										<i class="icon-move icon-white"></i> Move {$class_name}
 									</button>
 								</form>
 							{/if}
 							{if and( $can_set_location,
-							         ne( $current_node.node_id, ezini( 'NodeSettings', 'RootNode','content.ini' ) ), 
+							         ne( $current_node.node_id, ezini( 'NodeSettings', 'RootNode','content.ini' ) ),
 							         ne( $current_node.node_id, ezini( 'NodeSettings', 'MediaRootNode', 'content.ini' ) ),
 							         ne( $current_node.node_id, ezini( 'NodeSettings', 'UserRootNode', 'content.ini' ) ) )}
 								<form method="post" action={"content/action"|ezurl}>
@@ -102,7 +102,7 @@
 									<input type="hidden" name="NodeID" value="{$current_node.node_id}" />
 									<input type="hidden" name="ContentNodeID" value="{$current_node.node_id}" />
 									<button class="btn btn-inverse" name="ActionRemove">
-										<i class="icon-remove icon-white"></i> Remove {$class_name} 
+										<i class="icon-remove icon-white"></i> Remove {$class_name}
 									</button>
 								</form>
 							{/if}
