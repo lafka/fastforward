@@ -14,8 +14,4 @@
 	{def $object = $node.object}
 {/if}
 
-		<article id="line-{$object.class_identifier}-{$object.id}" class="{$object.class_identifier} line">
-
 		{include uri=concat( 'design:content/view/', $object.class_identifier, '/line.tpl' ) object=$object node=$node}
-
-		</article>
