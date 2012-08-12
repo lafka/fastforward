@@ -1,9 +1,6 @@
 /**
  * Basic typography
  */
-body { color: #222; background: transparent; font-family: "Deja vu sans",
-	   "Helvetica Neue", Arial, Helvetica, sans-serif; }
-
 h1, h2, h3, h4, h5, h6 { font-weight: bold; color: #333; margin: 0 0 0.25em;
                          line-height: 1.25em; }
 
