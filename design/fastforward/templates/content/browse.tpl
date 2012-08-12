@@ -33,6 +33,13 @@
 	                                           limit,          $page_limit,
 	                                           sort_by,        $main_node.sort_array))}
 
+	<hr />
+	{if $main_node.node_id|ne(2)}
+	<p>
+		<b><a href={concat("content/browse/", $main_node.parent_node_id, '/')|ezurl()} title="Go back">Go back</a></b>
+	</p>
+	{/if}
+
 	<ul>
 
 	{foreach $list as $item}
