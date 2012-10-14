@@ -1,5 +1,12 @@
 <?php /* #?ini charset="utf-8"?
 
+[ToolbarSettings]
+ShowEditButton[]
+ShowCreateButton[]
+ShowRemoveButton[]
+ShowLocationButton[]
+ShowMoveButton[]
+
 [ClassAttributeSettings]
 #CategoryList[image]=Image related
 #CategoryList[title]=Title

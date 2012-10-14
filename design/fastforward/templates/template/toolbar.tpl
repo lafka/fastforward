@@ -3,12 +3,20 @@
 	     $user_hash = concat( $user.role_id_list|implode( '_' ), '_', $user.limited_assignment_value_list|implode( '_' ) )
 	}
 	{def $current_node     = fetch( 'content', 'node', hash('node_id', $node_id))
-	     $content_object   = $current_node.object
-	     $is_container     = $content_object.content_class.is_container
-	     $can_set_location = fetch( 'content', 'access', hash( 'access', 'manage_locations',
-	                                                           'contentobject', $current_node ) )
-	     $policies         = fetch( 'user', 'user_role', hash( 'user_id', $user.contentobject_id ) )
-	     $class_name       = first_set($content_object.class_name|downcase(), 'object')}
+		$content_object   = $current_node.object
+		$is_container     = $content_object.content_class.is_container
+		$can_set_location = fetch( 'content', 'access', hash( 'access', 'manage_locations',
+		                                                      'contentobject', $current_node ) )
+		$policies         = fetch( 'user', 'user_role', hash( 'user_id', $user.contentobject_id ) )
+		$class_name       = first_set($content_object.class_name|downcase(), 'object')
+		$buttons          = hash(
+			'edit',     first_set(ezini('ToolbarSettings', 'ShowEditButton',    'content.ini')[$content_object.class_identifier], 'enabled')|eq('enabled'),
+			'remove',   first_set(ezini('ToolbarSettings', 'ShowRemoveButton',  'content.ini')[$content_object.class_identifier], 'enabled')|eq('enabled'),
+			'location', first_set(ezini('ToolbarSettings', 'ShowLocationButton','content.ini')[$content_object.class_identifier], 'enabled')|eq('enabled'),
+			'create',   first_set(ezini('ToolbarSettings', 'ShowCreateButton',  'content.ini')[$content_object.class_identifier], 'enabled')|eq('enabled'),
+			'move',     first_set(ezini('ToolbarSettings', 'ShowMoveButton',    'content.ini')[$content_object.class_identifier], 'enabled')|eq('enabled')
+		)
+	}
 
  	{cache-block keys=array( $module_result.uri, $user_hash )}
 		{if $user.is_logged_in}
@@ -16,7 +24,7 @@
 				<div class="navbar-inner">
 					<div class="container">
 						<nav>
-							{if and(is_set($content_object.can_edit), $content_object.can_edit)}
+							{if and($buttons.edit, is_set($content_object.can_edit), $content_object.can_edit)}
 									<form method="post" action={"content/action"|ezurl}>
   										<input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
 										<input type="hidden" name="HasMainAssignment" value="1" />
@@ -28,7 +36,7 @@
 										</button>
 									</form>
 							{/if}
-							{if and($content_object.can_create, $is_container)}
+							{if and($buttons.create, $content_object.can_create, $is_container)}
 								{def $class_list = $content_object.can_create_class_list}
 								{if $class_list|count()|gt(1)}
 									<span class="dropdown">
@@ -67,7 +75,7 @@
 									</form>
 								{/if}
 							{/if}
-							{if and(is_set($content_object.can_move), $content_object.can_move)}
+							{if and($buttons.move, is_set($content_object.can_move), $content_object.can_move)}
 								<form method="post" action={"content/action"|ezurl}>
   									<input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
 									<input type="hidden" name="HasMainAssignment" value="1" />
@@ -79,7 +87,8 @@
 									</button>
 								</form>
 							{/if}
-							{if and( $can_set_location,
+							{if and( $buttons.location,
+							         $can_set_location,
 							         ne( $current_node.node_id, ezini( 'NodeSettings', 'RootNode','content.ini' ) ),
 							         ne( $current_node.node_id, ezini( 'NodeSettings', 'MediaRootNode', 'content.ini' ) ),
 							         ne( $current_node.node_id, ezini( 'NodeSettings', 'UserRootNode', 'content.ini' ) ) )}
@@ -94,7 +103,7 @@
 									</button>
 								</form>
 							{/if}
-							{if and(is_set($content_object.can_remove), $content_object.can_remove)}
+							{if and($buttons.remove, is_set($content_object.can_remove), $content_object.can_remove)}
 								<form method="post" action={"content/action"|ezurl}>
   									<input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
 									<input type="hidden" name="HasMainAssignment" value="1" />
